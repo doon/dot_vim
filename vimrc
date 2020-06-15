@@ -28,19 +28,19 @@ let g:airline_solarized_bg='dark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
- 
+
+" I should probably move this to FT files, but they seem ok here
 " Configure Ale
 " let g:ale_completion_enabled = 1
-" let g:ale_linters = {'python':['fbflake8', 'pyls', 'pyre']}
-" let g:ale_fixers = {'python': ['pyfmt']}
-" let g:ale_python_pyls_executable = '/usr/local/bin/pyls-language-server'
+let g:ale_linters = {'python':['flake8', 'pyre', 'mypy']}
+let g:ale_fixers = {'python': ['black','isort']}
 let g:ale_fix_on_save = 1
  
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
  
 nmap <leader>l :ALEFix<CR>
- 
+
 " Make Me Pretty
 set termguicolors
 set background=dark
